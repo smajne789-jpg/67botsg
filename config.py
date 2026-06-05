@@ -5,15 +5,15 @@ channal_id = -1003751379134
 ID_SEND_TRANSFER = -1003919836164
 URL_LOG_CHANNAL = -1003905900773
 
-ADMIN = [6038457276]
-ADMIN_USERNAME = '@MamaYaWorkerSuka'
-URL_BOT = 'https://t.me/AloBiznes?DadaDengi'
-NICNAME = 'AloBiznes?DadaDengi'
-NAME_CASINO = 'CasinoDengi'
+ADMIN = [8549949225]
+ADMIN_USERNAME = '@tipo_privet67'
+URL_BOT = 'https://t.me/LUDO_CASINO_ROBOT'
+NICNAME = 'LUDO?CASINO'
+NAME_CASINO = 'LUDO CASINO'
 
 LIMIT_STAVKA = 30
-lose_withdraw = 20
-min_stavka_referal = 10
+lose_withdraw = 10
+min_stavka_referal = 5
 CASHBACK_PROCENT = 10
 CASHBACK_LIMIT = 1
 PROCENT_DRAW = 7
