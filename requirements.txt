@@ -5,3 +5,4 @@ colorama
 pytz
 datetime
 db-sqlite3
+loguru
