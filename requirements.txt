@@ -1,6 +1,7 @@
 aiogram
 aiocryptopay
 apscheduler
+colorama
 pytz
 datetime
 db-sqlite3
