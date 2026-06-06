@@ -126,11 +126,11 @@ class DataBase:
             return self.cur.execute(f'UPDATE stats SET count_play = 0, win = 0, lose = 0, balance_win = 0, balance_lose = 0')
 
     def get_fake_values(self):
-         result = self.cur.execute(
-         'SELECT fake FROM settings'
-           ).fetchone()
-        
-      if result is None:
+    result = self.cur.execute(
+        'SELECT fake FROM settings'
+    ).fetchone()
+
+    if result is None:
         return 0
 
     return result[0]
