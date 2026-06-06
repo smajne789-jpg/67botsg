@@ -128,8 +128,12 @@ class DataBase:
 
 
     def get_fake_values(self):
-        with self.connection:
-            return self.cur.execute('SELECT fake FROM settings').fetchone()[0]
+    result = self.cur.execute('SELECT fake FROM settings').fetchone()
+
+    if result is None:
+        return 0
+
+    return result[0]
 
     def update_fake(self, values):
         with self.connection:
@@ -162,10 +166,29 @@ class DataBase:
 
 
 
-    def get_URL(self):
-        with self.connection:
-            result = self.cur.execute(f'SELECT * FROM urls').fetchone()
-            return {'channals':result[0], 'checks':result[1], 'rules':result[2], 'transfer':result[3], 'command_game':result[4], 'info_stavka':result[5], 'news':result[6]}
+   def get_URL(self):
+    result = self.cur.execute('SELECT * FROM urls').fetchone()
+
+    if result is None:
+        return {
+            'channals': '',
+            'checks': '',
+            'rules': '',
+            'transfer': '',
+            'command_game': '',
+            'info_stavka': '',
+            'news': ''
+        }
+
+    return {
+        'channals': result[0],
+        'checks': result[1],
+        'rules': result[2],
+        'transfer': result[3],
+        'command_game': result[4],
+        'info_stavka': result[5],
+        'news': result[6]
+    }
 
     def update_url(self, column, values):
         with self.connection:
