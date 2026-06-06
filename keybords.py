@@ -3,7 +3,6 @@ from collections import OrderedDict
 
 from aiogram.types import InlineKeyboardButton, KeyboardButton
 from aiogram.utils.keyboard import InlineKeyboardBuilder, ReplyKeyboardBuilder
-from captcha_element import captcha_dict
 from config import *
 from loader import db
 
@@ -11,20 +10,6 @@ def shuffle_dict(d):
     keys = list(d.keys())
     random.shuffle(keys)
     return OrderedDict([(k, d[k]) for k in keys])
-
-
-async def captcha_keybord(word):
-    keybord = InlineKeyboardBuilder()
-    button = []
-    res = shuffle_dict(captcha_dict)
-    for k, v in res.items():
-        if len(button) == 6:
-            break
-        button.append(InlineKeyboardButton(text=f'{v}', callback_data=f'Captcha|{k}|{word}'))
-    keybord.add(*button)
-    keybord.adjust(3)
-    return keybord.as_markup()
-
 
 
 def send_stavka():
